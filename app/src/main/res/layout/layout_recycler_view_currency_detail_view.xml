@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="bankName"
+            type="String" />
+
+        <variable
+            name="purchase"
+            type="String" />
+
+        <variable
+            name="sale"
+            type="String" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/item_recycler_view_banks_padding"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/item_recycler_view_detail_view_currency_icon_size"
+            android:layout_height="@dimen/item_recycler_view_detail_view_currency_icon_size"
+            android:layout_marginRight="@dimen/item_recycler_view_banks_padding"/>
+
+        <TextView
+            android:id="@+id/textViewBankName"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_weight="2.5"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:text="@{bankName}"
+            android:layout_marginRight="@dimen/item_recycler_view_banks_padding"/>
+
+        <TextView
+            android:id="@+id/textViewPurchase"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:text="@{purchase}"
+            android:layout_marginRight="@dimen/item_recycler_view_banks_padding"/>
+
+        <TextView
+            android:id="@+id/textViewSale"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:text="@{sale}"
+            android:maxLines="1"/>
+
+    </LinearLayout>
+</layout>

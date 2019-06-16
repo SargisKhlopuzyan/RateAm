@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="drawableCurrency"
+            type="android.graphics.drawable.Drawable" />
+
+        <variable
+            name="currency"
+            type="String" />
+
+        <variable
+            name="currencyDescription"
+            type="String" />
+
+        <variable
+            name="isSelected"
+            type="boolean"/>
+
+        <variable
+            name="onItemClickListener"
+            type="android.view.View.OnClickListener" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="@dimen/item_recycler_view_banks_padding"
+        android:onClick="@{(v) -> onItemClickListener.onClick(v)}"
+
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/item_recycler_view_banks_currency_icon_size"
+            android:layout_height="@dimen/item_recycler_view_banks_currency_icon_size"
+            android:layout_marginRight="@dimen/item_recycler_view_banks_currency_padding"
+            android:src="@{drawableCurrency}"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewCurrency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:textColor="@android:color/black"
+                android:text="@{currency}"
+                android:layout_marginRight="@dimen/item_recycler_view_banks_padding"/>
+
+            <TextView
+                android:id="@+id/textViewCurrencyDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:text="@{currencyDescription}"
+                android:layout_marginRight="@dimen/item_recycler_view_banks_padding"/>
+
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:clickable="false"
+            android:visibility="@{isSelected ? View.VISIBLE : View.INVISIBLE}"
+            android:gravity="center_vertical"/>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#E8834A</color>
+    <color name="colorPrimaryDark">#974719</color>
+    <color name="colorAccent">#E8834A</color>
+
+    <color name="colorTextNormal">#444</color>
+
+    <color name="colorPrimaryWithTransparency">#AAE8834A</color>
+    <color name="colorCollapsingDark">#000</color>
+    <color name="colorGrayDark">#DDD</color>
+    <color name="colorGrayLight">#6DDD</color>
+
+</resources>

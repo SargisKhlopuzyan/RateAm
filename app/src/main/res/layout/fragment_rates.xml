@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="onCheckedChangeListener"
+            type="android.widget.RadioGroup.OnCheckedChangeListener" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:paddingTop="@dimen/rates_radio_group_vertical_padding"
+            android:paddingBottom="@dimen/rates_radio_group_vertical_padding"
+            android:onCheckedChanged="@{(group, checkedId) -> onCheckedChangeListener.onCheckedChanged(group, checkedId)}"
+            android:orientation="horizontal">
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+            <RadioButton
+                android:id="@+id/radioButtonBanks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleX="1.1"
+                android:scaleY="1.1"
+                android:checked="true"
+                android:text="@string/banks"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+            <RadioButton
+                android:id="@+id/radioButtonExchangePoint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleX="1.1"
+                android:scaleY="1.1"
+                android:text="@string/exchange_point"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+            <RadioButton
+                android:id="@+id/radioButtonCB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleX="1.1"
+                android:scaleY="1.1"
+                android:text="@string/cb"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+        </RadioGroup>
+
+        <com.sargis.kh.rateam.main_screen.viewpager.NonSwipeableViewPager
+            android:id="@+id/nonSwipeableViewPager"
+            app:layout_constraintTop_toBottomOf="@id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

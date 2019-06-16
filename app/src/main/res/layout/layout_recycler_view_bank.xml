@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="bankName"
+            type="String" />
+
+        <variable
+            name="purchase"
+            type="String" />
+
+        <variable
+            name="sale"
+            type="String" />
+
+        <variable
+            name="colorPurchase"
+            type="int" />
+
+        <variable
+            name="colorSale"
+            type="int" />
+
+        <variable
+            name="onItemClickListener"
+            type="android.view.View.OnClickListener" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/item_recycler_view_banks_padding"
+        android:onClick="@{(v) -> onItemClickListener.onClick(v)}"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/item_recycler_view_banks_icon_size"
+            android:layout_height="@dimen/item_recycler_view_banks_icon_size"
+            android:layout_marginRight="@dimen/item_recycler_view_banks_padding"/>
+
+        <TextView
+            android:id="@+id/textViewBankName"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_weight="2.5"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:text="@{bankName}"
+            android:layout_marginRight="@dimen/item_recycler_view_banks_padding"/>
+
+        <TextView
+            android:id="@+id/textViewPurchase"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:textColor="@{colorPurchase}"
+            android:text="@{purchase}"
+            android:layout_marginRight="@dimen/item_recycler_view_banks_padding"/>
+
+        <TextView
+            android:id="@+id/textViewSale"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:textColor="@{colorSale}"
+            android:text="@{sale}"/>
+
+    </LinearLayout>
+</layout>

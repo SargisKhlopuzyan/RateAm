@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="onCheckedChangeListener"
+            type="android.widget.RadioGroup.OnCheckedChangeListener" />
+
+    </data>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:showIn="@layout/activity_detail">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:onCheckedChanged="@{(group, checkedId) -> onCheckedChangeListener.onCheckedChanged(group, checkedId)}"
+                android:paddingTop="@dimen/rates_radio_group_vertical_padding"
+                android:paddingBottom="@dimen/rates_radio_group_vertical_padding"
+                android:orientation="horizontal">
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"/>
+                <RadioButton
+                    android:id="@+id/radioButtonCash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@android:color/white"
+                    android:textColor="@android:color/white"
+                    android:scaleX="1.1"
+                    android:scaleY="1.1"
+                    android:checked="true"
+                    android:text="@string/cash"/>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="2"/>
+                <RadioButton
+                    android:id="@+id/radioButtonNonCash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@android:color/white"
+                    android:textColor="@android:color/white"
+                    android:scaleX="1.1"
+                    android:scaleY="1.1"
+                    android:text="@string/non_cash"/>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"/>
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorGrayDark"
+                    android:padding="@dimen/item_recycler_view_banks_padding"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textViewCurrency"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:visibility="visible"
+                        android:gravity="center_vertical"
+                        android:layout_weight="2.5"
+                        android:singleLine="true"
+                        android:maxLines="1"
+                        android:text="@string/currency"
+                        android:layout_marginRight="@dimen/item_recycler_view_banks_padding"/>
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:visibility="invisible"
+                        android:layout_width="@dimen/item_recycler_view_banks_icon_size"
+                        android:layout_height="@dimen/item_recycler_view_banks_icon_size"
+                        android:layout_marginRight="@dimen/item_recycler_view_banks_padding"/>
+
+                    <TextView
+                        android:id="@+id/textViewPurchase"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical|right"
+                        android:layout_weight="1"
+                        android:singleLine="true"
+                        android:maxLines="1"
+                        android:text="@string/purchase"
+                        android:drawablePadding="@dimen/item_recycler_view_banks_padding"
+                        android:layout_marginRight="@dimen/item_recycler_view_banks_padding"/>
+
+                    <TextView
+                        android:id="@+id/textViewSale"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical|right"
+                        android:layout_weight="1"
+                        android:singleLine="true"
+                        android:maxLines="1"
+                        android:text="@string/sale_with_colon"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerViewCurrencyList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:nestedScrollingEnabled="false"
+                        android:scrollbars="none"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                        tools:listitem="@layout/layout_recycler_view_bank" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/item_recycler_view_banks_padding"
+                        android:text="@string/all_branches"
+                        android:textColor="@color/colorPrimary" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerViewBranchList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:nestedScrollingEnabled="false"
+                        android:scrollbars="none"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                        tools:listitem="@layout/layout_recycler_view_bank" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</layout>

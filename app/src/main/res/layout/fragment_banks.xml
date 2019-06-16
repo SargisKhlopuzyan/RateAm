@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="currencyType"
+            type="String" />
+
+        <variable
+            name="exchangeType"
+            type="String" />
+
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/item_recycler_view_banks_padding"
+                android:background="@color/colorGrayDark"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/buttonExchangeType"
+                    android:layout_width="0dp"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:theme="@style/White.Button"
+                    android:text="@{exchangeType}"
+                    android:gravity="left|center_vertical"
+                    android:drawableRight="@drawable/icons_sort_down_enabled"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_weight="2.5"
+                    tools:text="@string/cash"/>
+
+                <Button
+                    android:id="@+id/buttonCurrencyType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="?attr/actionBarSize"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:theme="@style/White.Button"
+                    android:text="@{currencyType}"
+                    tools:text="USA"
+                    android:drawablePadding="10dp"
+                    android:drawableLeft="@drawable/ic_united_states"
+                    android:drawableRight="@drawable/icons_sort_down_enabled"/>
+
+                <ImageButton
+                    android:layout_width="?attr/actionBarSize"
+                    android:layout_height="?attr/actionBarSize"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:theme="@style/White.Button"
+                    android:src="@drawable/icons_marker"
+                    android:minHeight="0dp"
+                    android:minWidth="0dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/item_recycler_view_banks_padding"
+                android:background="@color/colorGrayLight"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:visibility="invisible"
+                    android:layout_width="@dimen/item_recycler_view_banks_icon_size"
+                    android:layout_height="@dimen/item_recycler_view_banks_icon_size"
+                    android:layout_marginRight="@dimen/item_recycler_view_banks_padding"/>
+
+                <TextView
+                    android:id="@+id/textViewBankName"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:visibility="invisible"
+                    android:gravity="center_vertical"
+                    android:layout_weight="2.5"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:layout_marginRight="@dimen/item_recycler_view_banks_padding"/>
+
+                <TextView
+                    android:id="@+id/textViewPurchase"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|right"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:text="@string/purchase"
+                    android:drawablePadding="@dimen/item_recycler_view_banks_padding"
+                    android:drawableRight="@drawable/icons_sort_down_disabled"
+                    android:layout_marginRight="@dimen/item_recycler_view_banks_padding"/>
+
+                <TextView
+                    android:id="@+id/textViewSale"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|right"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:maxLines="1"
+                    android:drawableRight="@drawable/icons_sort_down_disabled"
+                    android:text="@string/sale_with_colon"/>
+            </LinearLayout>
+
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/swipeRefreshLayout"
+                android:layout_width="match_parent"
+                android:clipToPadding="false"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:scrollbars="vertical"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    tools:listitem="@layout/layout_recycler_view_bank"/>
+
+            </android.support.v4.widget.SwipeRefreshLayout>
+
+        </LinearLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</layout>

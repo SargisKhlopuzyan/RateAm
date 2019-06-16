@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Rates Fragment-->
+    <dimen name="rates_radio_group_vertical_padding">8dp</dimen>
+
+    <!--Banks Fragment-->
+    <dimen name="item_recycler_view_banks_padding">8dp</dimen>
+    <dimen name="item_recycler_view_banks_icon_size">30dp</dimen>
+    <dimen name="item_recycler_view_banks_currency_icon_size">24dp</dimen>
+    <dimen name="item_recycler_view_banks_currency_padding">15dp</dimen>
+
+    <!--Detail Activity-->
+    <dimen name="app_bar_height">400dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="fragment_dialog_exchange_type_padding">12dp</dimen>
+    <dimen name="item_recycler_view_detail_view_currency_icon_size">25dp</dimen>
+
+    <!--CollapsingToolbarLayout-->
+    <dimen name="collapsing_toolbar_text_view_min_height">30dp</dimen>
+    <dimen name="item_recycler_view_branch_detail_view_padding">8dp</dimen>
+
+</resources>

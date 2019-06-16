@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="currency_list">
+        <item>USD</item>
+        <item>EUR</item>
+        <item>RUR</item>
+        <item>AUD</item>
+        <item>CAD</item>
+        <item>CHF</item>
+        <item>GBP</item>
+        <item>GEL</item>
+        <item>JPY</item>
+        <item>XAU</item>
+    </array>
+
+    <array name="currency_description_list">
+        <item>Ամերիկյան դոլար</item>
+        <item>ԵՎՐՈ</item>
+        <item>Ռուսաստանյան ռուբլի</item>
+        <item>Ավստրալիական դոլար</item>
+        <item>Կանադական դոլար</item>
+        <item>Շվեյցարական ֆրանկ</item>
+        <item>Մեծ Բրիտանիայի Ֆունտ ստերլինգ</item>
+        <item>Վրացական լարի</item>
+        <item>Ճապոնական յեն</item>
+        <item>Ոսկի</item>
+    </array>
+
+    <integer-array name="currency_icon_list">
+        <item>@drawable/ic_united_states</item>
+        <item>@drawable/ic_european_union</item>
+        <item>@drawable/ic_russia</item>
+        <item>@drawable/ic_australia</item>
+        <item>@drawable/ic_canada</item>
+        <item>@drawable/ic_switzerland</item>
+        <item>@drawable/ic_united_kingdom</item>
+        <item>@drawable/ic_georgia</item>
+        <item>@drawable/ic_japan</item>
+        <item>@drawable/ic_gold</item>
+    </integer-array>
+
+</resources>
