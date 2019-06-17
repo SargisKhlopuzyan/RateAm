@@ -106,7 +106,6 @@ public class BanksAdapter extends RecyclerView.Adapter<BanksAdapter.DataAdapterV
         public void bindData(final Organization organization, final String organizationId) {
 
             Picasso.get().load(Constants.BANK_LOGO_URL + organization.logo)
-                    .networkPolicy(NetworkPolicy.OFFLINE)
                     .placeholder(R.drawable.icon_bank)
                     .into(binding.imageView);
 

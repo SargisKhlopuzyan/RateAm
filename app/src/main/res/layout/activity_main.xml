@@ -19,6 +19,7 @@
                 app:tabIndicatorColor="@android:color/white"
                 android:background="@color/colorPrimary"
                 app:tabRippleColor="@color/colorPrimary"
+                app:tabMaxWidth="0dp"
                 app:tabMode="fixed"
                 app:tabGravity="fill"/>
         </android.support.design.widget.AppBarLayout>

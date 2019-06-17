@@ -110,7 +110,6 @@ public class DetailActivity extends AppCompatActivity implements OrganizationDet
     private void setOrganizationName() {
         binding.setOrganizationName(organization.title);
         Picasso.get().load(Constants.BANK_LOGO_URL + organization.logo)
-                .networkPolicy(NetworkPolicy.OFFLINE)
                 .placeholder(R.drawable.icon_bank)
                 .into(binding.circleImageView);
     }
